@@ -1,0 +1,24 @@
+1) Предварительно создайте файл bash2.txt, в который вы будете добавлять выполненные команды   -> touch bash2.txt
+2) Зайти в домашнюю директорию через терминал                                                  -> cd
+3) Создать папку test 3                                                                        -> mkdir test_3
+4) Добавить в папку test 3 три файла 4, 5 и 6                                                  -> touch test_3/4 test_3/5 test_3/6
+5) В каждом из трёх файлов (4, 5 ,6) создать по 4 строки row1, row2, row3, row4                -> printf "row1\nrow2\nrow3\nrow4\n" >> test_3/4
+                                                                                               -> printf "row1\nrow2\nrow3\nrow4\n" >> test_3/5
+                                                                                               -> printf "row1\nrow2\nrow3\nrow4\n" >> test_3/6
+6) Найдите строку row2 в файле 5                                                               -> grep "row2" test_3/5
+7) Найдите строку row в папке test3                                                            -> grep "row" -r test_3
+8) Посчитайте сколько строк с содержимым row в файле 6                                         -> grep "row" -c test_3/6
+9) Найдите файл 5 внутри папки test3                                                           -> find test_3 -name "5"
+10)Используя команду find, удалите файл 5                                                      -> find test_3 -name "5" -delete
+11)Используя команду echo, добавьте слово test в файл 4 (без сохранения содержимого)           -> echo "test" > test_3/4
+12)Замените слово test в файле 4 на fail                                                       -> echo "fail" > test_3/4
+13)Добавьте в файл 4 слово test так, чтобы сохранилось содержимое                              -> echo "test" >> test_3/4
+14)Просмотрите все процессы для юзеров не только в консоли, которые происходят в системе       -> ps aux
+15)Убейте процесс 666 в консоли (можно не убивать, а просто написать команду)                  -> kill 666
+16)Узнайте доступность ресурса rusau.net, используя ping                                       -> ping rusau.net
+17)Отправьте 5 пакетов на сайт rusau.net                                                       -> ping -c 5 rusau.net
+18)Используя GET и команду curl, получите информацию о зарегистрированных питомцах
+   с любым статусом на https://petstore.swagger.io/                                            -> curl -X GET https://petstore.swagger.io/v2/pet/findByStatus?status=available,pending,sold
+19)Используя POST и команду curl, создайте нового пользователя
+   на https://petstore.swagger.io/                                                             -> curl -X POST "https://petstore.swagger.io/v2/user" -H "Content-Type: application/json"
+                                                                                                  --data '{"id": 1234, "username": "testuser", "firstName": "Test", "lastName": "User", "email": "testuser@example.com", "password": "pass123", "phone": "1234567890", "userStatus": 1}'
